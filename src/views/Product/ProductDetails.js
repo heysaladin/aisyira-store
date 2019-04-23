@@ -130,7 +130,7 @@ class ProductDetails extends Component {
             />
           )}
           {this.props.product.backorders_allowed || this.props.product.in_stock ? (
-            <Button color="purple" fluid onClick={this.addItem}>
+            <Button color="" fluid onClick={this.addItem}>
               ADD TO CART &nbsp;<Icon name="cart" />
             </Button>
           ) : null}

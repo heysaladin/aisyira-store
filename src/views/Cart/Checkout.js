@@ -19,7 +19,7 @@ class Checkout extends Component {
       <Form method="POST" action={config.API_CHECKOUT_URL}>
         <Form.Input type="hidden" name="items" value={this.getItems()} />
 
-        <Button color="purple" fluid type="submit">
+        <Button color="" fluid type="submit">
           Checkout
         </Button>
       </Form>

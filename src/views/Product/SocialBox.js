@@ -15,7 +15,7 @@ class SocialBox extends Component {
             <Grid.Row>
               <Grid.Column width={4}>
                 <FacebookShareButton className="no-outline" url={this.props.permalink}>
-                  <Icon name="facebook f" color="purple" size="big" />
+                  <Icon name="facebook f" color="" size="big" />
                 </FacebookShareButton>
               </Grid.Column>
               <Grid.Column width={4}>
@@ -23,12 +23,12 @@ class SocialBox extends Component {
                   className="no-outline"
                   url={this.props.permalink}
                 >
-                  <Icon name="google plus" color="purple" size="big" />
+                  <Icon name="google plus" color="" size="big" />
                 </GooglePlusShareButton>
               </Grid.Column>
               <Grid.Column width={4}>
                 <TwitterShareButton className="no-outline" url={this.props.permalink}>
-                  <Icon name="twitter" color="purple" size="big" />
+                  <Icon name="twitter" color="" size="big" />
                 </TwitterShareButton>
               </Grid.Column>
             </Grid.Row>

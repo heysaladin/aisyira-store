@@ -110,7 +110,7 @@ class CartProduct extends Component {
                 />
               </Grid.Column>
               <div className="cart-buttons">
-                <Button icon onClick={this.toggleCardHeight} color="purple">
+                <Button icon onClick={this.toggleCardHeight} color="">
                   <Icon name="pencil" />
                 </Button>
                 <Button icon className="cart-delete" onClick={this.removeItem}>

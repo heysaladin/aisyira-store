@@ -15,7 +15,7 @@ const SideMenu = props => (
     icon="labeled"
     vertical
     inverted
-    color="purple"
+    color=""
   >
     <Header as="h2" inverted>
       MENU

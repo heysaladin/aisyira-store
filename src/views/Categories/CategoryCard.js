@@ -21,7 +21,7 @@ class CategoryCard extends Component {
               {this.props.name}
             </Card.Header>
             <Link to={'/category/' + this.props.id}>
-              <Button color="purple" compact>
+              <Button color="" compact>
                 View Products &gt;
               </Button>
             </Link>

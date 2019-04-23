@@ -1,11 +1,11 @@
 {
-  "name": "PWA WooCommerce Demo App",
-  "short_name": "PWA WooCommerce Demo App",
+  "name": "Aisyira",
+  "short_name": "E-Commerce Store for Young",
   "start_url": "./index.html",
   "display": "standalone",
   "orientation": "any",
-  "theme_color": "#a333c8",
-  "background_color": "#a333c8",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "icons": [
     {
       "src": "https://pwa-woo.wpmobilepack.com/48icon_1512486555.jpg",

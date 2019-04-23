@@ -59,8 +59,16 @@ class NavBar extends Component {
     const { searchVisible } = this.props;
 
     return (
-      <Segment basic color="purple" inverted size="small" className="nav-bar">
+      <Segment basic color="" inverted size="small" className="nav-bar" style={{
+      height: 50,
+      position: 'fixed',
+      bottom: 0,
+      marginBottom: 0,
+      width: '100%',
+      zIndex: 999
+      }}>
         <Menu fluid secondary>
+        {/*
           <Menu.Item onClick={this.showSidebar} fitted>
             <Icon name="content" size="large" onClick={this.showSidebar} className="shop-icon" />
           </Menu.Item>
@@ -85,11 +93,14 @@ class NavBar extends Component {
               )
             }
           </Menu.Item>
+          */}
           <Menu.Item position="right" fitted>
             <Menu.Item fitted>
+              {/*
               {searchVisible === false ?
                 <Button icon="search" circular size="big" onClick={this.openSearch} />
                 : null}
+              */}
               <Icon.Group>
                 <Link to="/cart" className="cart-link">
                   <Icon name="cart" size="large" className="shop-icon" />

@@ -36,13 +36,15 @@ class App extends Component {
           transitionIn="fadeIn"
           transitionOut="fadeOut"
         />
+        {this.props.children}
+        <NavBar />
+        {/*
         <Sidebar.Pushable>
           <SideMenu isVisible={this.props.sideMenuVisible} closeMenu={this.props.closeMenu} />
           <Sidebar.Pusher dimmed={this.props.sideMenuVisible} onClick={this.hideSidebar}>
-            <NavBar />
-            {this.props.children}
           </Sidebar.Pusher>
         </Sidebar.Pushable>
+        */}
       </div>
     );
   }

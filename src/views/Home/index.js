@@ -86,8 +86,10 @@ class Home extends Component {
         dataLength={items.length}
         next={this.loadProducts}
         hasMore={hasMore}
+        style={{marginBottom: 50}}
       >
-        <ProductsList products={_.orderBy(items, ['name'], ['asc'])} title="Home" />
+        <h1>Aisyira</h1>
+        <ProductsList products={_.orderBy(items, ['name'], ['asc'])} title="" />
       </InfiniteScroll>
     );
   }
