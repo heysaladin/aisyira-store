@@ -8,7 +8,9 @@ $(document).ready(function () {
     var catResults = '';
     var categories = [];
 
-    $.get(_url, function (data) {
+    function renderPage(data) {
+
+        //$.get(_url, function (data) {
         $.each(data, function (key, items) {
 
             _cat = items.category;
@@ -28,13 +30,36 @@ $(document).ready(function () {
         $('#products').html(dataResults);
         $('#cat_select').html("<option value='all'>semua</option>" + catResults);
 
+        //})
+    }
+
+    var networkDataReceived = false;
+
+    var networkUpdate = fetch(_url).then(function (response) {
+        return response.json();
+    }).then(function (data) {
+        networkDataReceived = true
+        renderPage(data)
+    })
+
+    //return data from cache
+    caches.match(_url).then(function (response) {
+        if (!response) throw Error('no data on cache')
+        return response.json()
+    }).then(function (data) {
+        if (!networkDataReceived) {
+            renderPage(data)
+            console.log('render data from cache')
+        }
+    }).catch(function () {
+        return networkUpdate
     })
 
 });
 
 // fungsi filter
 $("#cat_select").on('change', function () {
-    updateProduct($(this).val())
+    updateProduct($(this).val());
 })
 
 function updateProduct(cat) {
@@ -42,13 +67,11 @@ function updateProduct(cat) {
     var dataResults = '';
     var _newUrl = _url;
 
-    if (cat != 'all')
-        _newUrl = _url + "?category=" + cat
+    if (cat != 'all') {
+        _newUrl = _url + "?category=" + cat;
+    }
 
-    $.get(_url, function (data) {
-
-
-
+    $.get(_newUrl, function (data) {
 
         $.each(data, function (key, items) {
 
@@ -65,4 +88,17 @@ function updateProduct(cat) {
 
     })
 
+}
+
+// PWA
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/serviceworker.js').then(function (registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    });
 }
